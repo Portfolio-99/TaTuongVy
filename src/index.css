@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  --color-legal-gold: #d4af37;
+  --color-legal-dark: #0f172a;
+  --color-legal-deep: #1e293b;
+  --color-legal-text-main: #f1f5f9;
+  --color-legal-text-muted: #94a3b8;
+
+  --color-gold-50: color-mix(in srgb, #d4af37 50%, white);
+  --color-gold-950: color-mix(in srgb, #d4af37 95%, black);
+
+  --spacing-18: 4.5rem;
+  --breakpoint-3xl: 120rem;
+}
+
+@layer base {
+  :root {
+    --text: #6b6375;
+    --text-h: #08060d;
+    --bg: #fff;
+    --border: #e5e4e7;
+    --code-bg: #f4f3ec;
+    --accent: #d4af37;  /* thay bằng legal-gold nếu muốn thống nhất */
+    --accent-bg: rgba(212, 175, 55, 0.1);
+    --accent-border: rgba(212, 175, 55, 0.3);
+    --social-bg: rgba(244, 243, 236, 0.5);
+    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+    font: 18px / 1.45 var(--font-sans);
+    color-scheme: light dark;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #9ca3af;
+      --text-h: #f3f4f6;
+      --bg: #16171d;
+      --border: #2e303a;
+      --code-bg: #1f2028;
+      --accent: #d4af37;
+      --accent-bg: rgba(212, 175, 55, 0.15);
+      --accent-border: rgba(212, 175, 55, 0.4);
+      --social-bg: rgba(47, 48, 58, 0.5);
+      --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    }
+  }
+
+  body { margin: 0; }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-inline: 1px solid var(--border);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  /* ... giữ nguyên phần h1, h2, code, responsive */
+}
+
+/* Custom container cho nội dung */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
